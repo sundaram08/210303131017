@@ -20,8 +20,8 @@ const Home: React.FC = () => {
             if (!token) {
                 throw new Error('REACT_APP_ACCESS_TOKEN is not defined');
             }
-
-            const response = await axios.post('/api/products', {
+            // here i have given the base url and after that the params will be based on the form filled and states updated
+            const response = await axios.post('http://localhost:3000/categories', {
                 categoryName,
                 top,
                 minPrice,
@@ -53,6 +53,7 @@ const Home: React.FC = () => {
                     <label className="block text-gray-700 font-bold mb-2">
                         Category Name:
                     </label>
+
                     <input
                         type="text"
                         value={categoryName}
